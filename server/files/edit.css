@@ -7,5 +7,24 @@ textarea {
 }
 
 div {
-  margin: 4px 0px;
+  margin: 5px 0px;
+}
+
+.edit-container {
+  margin: 10px 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.edit-container :first-child{
+  flex-grow: 1;
+}
+
+.edit-container img {
+  height: 100%;
+  width: 100%;
+  width: auto;
+  max-width: none;
+  display: block;
+  flex-shrink: 0; 
 }

@@ -1,44 +1,65 @@
 @import url(layout.css);
 
-body {
-  background-image: url('images/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-article {
-  background-color: rgba(211, 211, 211, 0.9);
-  border-radius: 16px;
-  padding: 16px;
-  width: 384px;
-  margin: 8px;
-}
-
-article button {
-  margin: 0px 2px;
-}
-
-main {
+article{
   display: flex;
-  flex-wrap: wrap;
+  margin: 10px;
+  background-color: rgb(231, 231, 231);
+  max-height: 24vw;
 }
 
-header {
+article > div{
+  padding: 0 10px 0 20px;
+  max-width: 100%;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.article-header{
+  margin: 10px 0;
+}
+
+.article-header *{
+  margin: 2px;
+}
+
+.title-container :first-child {
+  flex-grow: 1;
+}
+
+.title-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
 }
 
-span {
-  margin-right: 4px;
+article > div *{
+  font-size: 1rem;
 }
 
-.genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
-  font-weight: bold;
+article div h2{
+  font-size: 1.5rem;
+}
+
+img {
+  max-height: 24vw;
+  border-right: 5px solid red;
+}
+
+.genre-tag{
+  margin-right: 5px;
+  background-color: red;
+  padding: 8px;
+  color: white;
+  border-radius: 100px;
+  font-size: 0.8rem;
+}
+
+nav ul{
+  list-style: none;
+  padding: 0 20px 0 5px;
+  margin: 0;
+}
+
+nav button{
+  width:95%;
+  margin: 5px 10px;
 }

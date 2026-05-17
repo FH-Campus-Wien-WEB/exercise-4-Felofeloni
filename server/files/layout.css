@@ -1,80 +1,51 @@
 @import url(base.css);
 
-h1 {
-  font-size: 200%;
-  margin: 8px 0px;
-}
-
-html,
-body {
-  margin: 0px;
-  height: 100vh;
-}
-
-/* The nav's header and button list will be centered */
-nav {
+body{
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-ul {
-  margin-top: 0px;
-  padding: 2px;
-  list-style-type: none;
-}
-
-body {
-  display: grid;
-  grid-template-rows: 92px auto 64px;
-  grid-template-columns: 192px auto;
-  grid-template-areas: "h h" "n m" "f f";
   margin: 0;
 }
 
-header {
-  grid-area: h;
-}
-
-nav {
-  grid-area: n;
-}
-
-main {
-  grid-area: m;
-  overflow-y: auto;
-}
-
-footer {
-  grid-area: f;
-}
-
-nav > ul {
-  display: flex;
-  flex-direction: column;
-  row-gap: 4px;
-}
-
-footer > ul {
-  display: flex;
-  flex-direction: row;
-  column-gap: 16px;
-  justify-content: center;
-}
-
-article h2 {
-  margin-bottom: 0px;
-}
-
-/* navigation buttons have full width */
-nav button {
+header{
+  grid-area: header;
   width: 100%;
 }
 
-img {
-  border-radius: 12px;
+nav{
+  grid-area: nav;
+  width: 100%;
 }
 
-a {
-  color: beige;
+main{
+  grid-area: main;
+  overflow-y: auto;
+  padding-bottom: 74px;
+  width: 100%;
+}
+
+footer{
+  grid-area: footer;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  nav {
+    width: auto;
+  }
 }

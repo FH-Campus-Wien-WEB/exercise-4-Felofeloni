@@ -1,30 +1,5 @@
 {
   "joe": {
-    "tt0399295": {
-      "imdbID": "tt0399295",
-      "Title": "Lord of War",
-      "Released": "2005-09-15",
-      "Runtime": 122,
-      "Genres": [
-        "Crime",
-        "Drama"
-      ],
-      "Directors": [
-        "Andrew Niccol"
-      ],
-      "Writers": [
-        "Andrew Niccol"
-      ],
-      "Actors": [
-        "Nicolas Cage",
-        "Ethan Hawke",
-        "Jared Leto"
-      ],
-      "Plot": "An arms dealer confronts the morality of his work as he is being chased by an INTERPOL Agent.",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNThlY2NkYmMtNTFhNi00MzBiLWJmNzEtZjk5MzYwYWU2MjllXkEyXkFqcGc@._V1_SX300.jpg",
-      "Metascore": 62,
-      "imdbRating": 7.6
-    },
     "tt0167260": {
       "imdbID": "tt0167260",
       "Title": "The Lord of the Rings: The Return of the King",

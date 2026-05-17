@@ -1,20 +1,50 @@
-body {
-  font-family: "Trebuchet MS", sans-serif;
-  background-color: brown;
-  color: beige;
+* {
+  font-family: Arial, sans-serif;
 }
 
-main {
-  color: #333;
+html{
+  min-height: 100vh;
+  margin: 0px;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  min-height: 100vh;
+  margin: 0px;
 }
 
 button {
-    padding: 4px;
-    border-width: 1px;
+    padding: 4px 10px;
     border-radius: 4px;
-    font-size: 105%;
+    border: 0;
+    font-size: 110%;
+    background-color: red;
+    color: white;
+    font-weight: bold;
 }
 
 button:hover {
-  background-color: darkgray;
+  background-color: gray;
+}
+
+header{
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+}
+
+h1{
+  padding-left: 5px;
+}
+
+footer{
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  height: 64px;
+}
+
+nav{
+  background-color: rgb(231, 231, 231);
+  padding: 5px 10px;
 }

@@ -14,6 +14,8 @@ function setMovie(movie) {
       element.value = value;
     }
   }
+
+  document.getElementById("poster").src = movie.Poster;
 }
 
 function getMovie() {

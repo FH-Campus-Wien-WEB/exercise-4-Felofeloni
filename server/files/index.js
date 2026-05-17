@@ -104,6 +104,10 @@ function addMovie(imdbID) {
     });
 }
 
+function editMovie(id){
+  location.href = 'edit.html?imdbID=' + id
+}
+
 function deleteMovie(imdbID) {
   fetch(`/movies/${imdbID}`, { method: 'DELETE' })
     .then(response => {
@@ -165,9 +169,17 @@ window.onload = function () {
   function renderUserGreeting() {
     const greetingElement = document.getElementById('userGreeting');
     if (currentSession) {
-      // Task 1.2: Render a user greeting to `#userGreeting` 
-      // using `firstName`, `lastName`, and the server-provided
-      // login timestamp.
+      const { firstName, lastName, loginTime } = currentSession;
+      let loggedAt = '';
+      try {
+        const d = new Date(loginTime);
+        const datePart = new Intl.DateTimeFormat('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+        const timePart = new Intl.DateTimeFormat('de-DE', { hour: '2-digit', minute: '2-digit', hour12: false }).format(d);
+        loggedAt = `${datePart} um ${timePart}`;
+      } catch (err) {
+        loggedAt = loginTime || '';
+      }
+      greetingElement.textContent = `Hi ${firstName} ${lastName}, du hast dich am ${loggedAt} angemeldet.`;
     } else {
       greetingElement.textContent = messages.loggedOutGreeting;
     }
@@ -212,9 +224,37 @@ window.onload = function () {
     e.preventDefault();
     const formData = new FormData(e.target);
 
-    // Task 1.1: Implement the login submit flow to call `POST /login` 
-    // with username and password, handle errors, save the response 
-    // into `currentSession`, then call `updateUI()` and `loadMovies()`.
+    const username = formData.get('username');
+    const password = formData.get('password');
+
+    fetch('/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    })
+      .then(response => {
+        if (!response.ok) {
+          if (response.status === 401) {
+            throw new Error('invalid-credentials');
+          }
+          throw new Error(`HTTP ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        currentSession = data;
+        document.getElementById('loginDialog').close();
+        updateUI();
+        loadMovies();
+      })
+      .catch(error => {
+        console.error('Login failed:', error);
+        if (error.message === 'invalid-credentials') {
+          alert(messages.loginFailed);
+        } else {
+          alert(`${messages.loginFailed} ${error.message}`);
+        }
+      });
 
   });
 

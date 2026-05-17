@@ -101,34 +101,44 @@ function formatRuntime(runtime) {
 
 export class MovieBuilder extends ElementBuilder {
   constructor(movie, deleteMovie, isLoggedIn) {
-    super("article")
-      .id(movie.imdbID)
-      .append(new ElementBuilder("img").with("src", movie.Poster))
-      .append(new ElementBuilder("h1").text(movie.Title));
+    //Article
+    super("article").id(movie.imdbID);
 
+    //Poster
+      const moviePoster = new ElementBuilder("img").with("src", movie.Poster);
+      moviePoster.appendTo(this.element)
+
+    //Content Container
+    const movieContent = new ElementBuilder("div").class("content-container");
+    const articleHeader = new ElementBuilder("div").class("article-header")
+    articleHeader.appendTo(movieContent.element)
+    const titleContainer = new ElementBuilder("div").class("title-container")
+    titleContainer.appendTo(articleHeader.element)
+    new ElementBuilder("h2").text(movie.Title).appendTo(titleContainer.element)
+    new ElementBuilder("p").text(`Released: ${movie.Released} | Runtime: ${movie.Runtime} min | IMDb: ${movie.imdbRating} | Metascore: ${movie.Metascore}`).appendTo(articleHeader.element)
+
+    const articleSide = new ElementBuilder("div").class("article-side")
+    articleSide.appendTo(titleContainer.element)
+
+    //Buttons
     if (isLoggedIn) {
-      this.append(
-        new ElementBuilder("p")
-          .append(new ButtonBuilder("Edit").onclick(() => location.href = "edit.html?imdbID=" + movie.imdbID))
-          .append(new ButtonBuilder("Delete").onclick(() => deleteMovie(movie.imdbID)))
-      );
+      const editButton = new ElementBuilder("button").text("Edit").listener("click", () => {
+                        location.href = "edit.html?imdbID=" + movie.imdbID
+                    })
+      editButton.appendTo(articleSide.element)
+      const deleteButton = new ElementBuilder("button").text("Delete").listener("click", () => {
+                        deleteMovie(movieArticle.element.id)
+                    })
+      deleteButton.appendTo(articleSide.element)
     }
 
-    this.append(
-        new ParagraphBuilder().items(
-          "Runtime " + formatRuntime(movie.Runtime),
-          "\u2022",
-          "Released on " + new Date(movie.Released).toLocaleDateString("en-US")
-        )
-      )
-      .append(new ParagraphBuilder().childClass("genre").items(movie.Genres))
-      .append(new ElementBuilder("p").text(movie.Plot))
-      .append(new ElementBuilder("h2").pluralizedText("Director", movie.Directors))
-      .append(new ListBuilder().items(movie.Directors))
-      .append(new ElementBuilder("h2").pluralizedText("Writer", movie.Writers))
-      .append(new ListBuilder().items(movie.Writers))
-      .append(new ElementBuilder("h2").pluralizedText("Actor", movie.Actors))
-      .append(new ListBuilder().items(movie.Actors));
+    movieContent.append(generateTagsElement(movie.Genres))
+        .append(new ElementBuilder("p").text(movie.Plot))
+        .append(generateListElement("Directors", movie.Directors))
+        .append(generateListElement("Writers", movie.Writers))
+        .append(generateListElement("Actors", movie.Actors))       
+    
+    this.append(movieContent) 
   }
 }
 
@@ -140,4 +150,26 @@ export class ButtonBuilder extends ElementBuilder {
   onclick(handler) {
     return this.listener("click", handler)
   }
+}
+
+function generateListElement(listTitle, list){
+  return new ElementBuilder("div")
+    .append(new ElementBuilder("h3").text(listTitle))
+    .append(
+      new ParentChildBuilder("ul", "li").items(list)
+    );
+}
+
+function generateTagsElement(list){
+  const container = new ElementBuilder("div");
+
+  for (const item of list) {
+    container.append(
+      new ElementBuilder("span")
+        .class("genre-tag")
+        .text(item)
+    );
+  }
+
+  return container;
 }

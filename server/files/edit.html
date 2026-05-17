@@ -3,64 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit movie</title>
-    <link rel="stylesheet" href="edit.css"/>
-    <script src="edit.js" defer></script>
-  </head> 
-  <body>
-    <form> 
-      <input type="hidden" id="imdbID" />
-      <div><label for="Title">Title</label><input type="text" id="Title" /></div>
-      <div><label for="Released">Released On</label><input type="date" id="Released" /></div>
-      <div><label for="Runtime">Runtime</label><input type="number" id="Runtime" min="0"/></div>
-      <div><label for="Plot">Plot</label><textarea row="5" id="Plot"></textarea></div>
-      <div><label for="Poster">Poster URL</label><input type="url" id="Poster" /></div>
-      <div>
-        <label for="Metascore">Metascore</label>
-        <input type="number" id="Metascore" min="0" max="100" />
-      </div>
-      <div>
-        <label for="imdbRating">IMDb Rating</label>
-        <input type="number" id="imdbRating" min="0" max="10" step="0.1" />
-      </div>
-      <div>
-        <label for="Genres">Genres</label>
-        <select id="Genres" multiple>
-          <option value="Action">Action</option>
-          <option value="Adventure">Adventure</option>
-          <option value="Animation">Animation</option>
-          <option value="Biography">Biography</option>
-          <option value="Comedy">Comedy</option>
-          <option value="Crime">Crime</option>
-          <option value="Documentary">Documentary</option>
-          <option value="Drama">Drama</option>
-          <option value="Family">Family</option>
-          <option value="Fantasy">Fantasy</option>
-          <option value="Film Noir">Film Noir</option>
-          <option value="History">History</option>
-          <option value="Horror">Horror</option>
-          <option value="Music">Music</option>
-          <option value="Musical">Musical</option>
-          <option value="Mystery">Mystery</option>
-          <option value="Romance">Romance</option>
-          <option value="Sci-Fi">Sci-Fi</option>
-          <option value="Short Film">Short Film</option>
-          <option value="Sport">Sport</option>
-          <option value="Superhero">Superhero</option>
-          <option value="Thriller">Thriller</option>
-          <option value="War">War</option>
-          <option value="Western">Western</option>
-        </select>
-      </div>
+    <title>Movies!</title>
+    <link rel="stylesheet" href="edit.css" />
+    <script src="edit.js"></script>
+  </head>
 
-      <div><label for="Directors">Directors</label><input type="text" id="Directors" /></div>
-      <div><label for="Writers">Writers</label><input type="text" id="Writers" /></div>
-      <div><label for="Actors">Actors</label><input type="text" id="Actors" /></div>
-      <div>
-        <button type="button" onclick="putMovie()">Save</button>
-        <button type="button" onclick="location.href = 'index.html'">Cancel</button>
-      </div>
-    </form>
-    
+  <body>
+    <header>
+      <h1>Edit</h1>
+    </header>
+    <div class="edit-container">
+        <form>
+            <input type="hidden" id="imdbID">
+
+            <!-- Title -->
+            <div>
+                <label for="Title">Title</label>
+                <input type="text" id="Title" required>
+            </div>
+
+            <!-- Released -->
+            <div>
+                <label for="Released">Released</label>
+                <input type="date" id="Released" required>
+            </div>
+
+            <!-- Runtime -->
+            <div>
+                <label for="Runtime">Runtime</label>
+                <input type="number" id="Runtime" required>
+            </div>
+
+            <!-- Genres -->
+            <div>
+                <label for="Genres">Genres</label>
+                <select id="Genres" multiple required>
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Biography">Biography</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Family">Family</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Film Noir">Film Noir</option>
+                    <option value="History">History</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Music">Music</option>
+                    <option value="Musical">Musical</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Short Film">Short Film</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Superhero">Superhero</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="War">War</option>
+                    <option value="Western">Western</option>
+                </select>
+            </div>
+
+            <!-- Directors -->
+            <div>
+                <label for="Directors">Directors</label>
+                <input type="text" id="Directors" required>
+            </div>
+
+            <!-- Writers -->
+            <div>
+                <label for="Writers">Writers</label>
+                <input type="text" id="Writers" required>
+            </div>
+
+            <!-- Actors -->
+            <div>
+                <label for="Actors">Actors</label>
+                <input type="text" id="Actors" required>
+            </div>
+
+            <!-- Plot -->
+            <div>
+                <label for="Plot">Plot</label>
+                <textarea id="Plot" required></textarea>
+            </div>
+
+            <!-- Poster -->
+            <div>
+                <label for="Poster">Poster</label>
+                <input type="url" id="Poster" required>
+            </div>
+
+            <!-- Metascore -->
+            <div>
+                <label for="Metascore">Metascore</label>
+                <input type="number" id="Metascore" required>
+            </div>
+
+            <!-- IMDb Rating -->
+            <div>
+                <label for="imdbRating">IMDb Rating</label>
+                <input type="number" id="imdbRating" required>
+            </div>
+
+            <div>
+            <button onclick="putMovie()" type="button">Edit</button>
+            <button onclick="location.href = '.'" type="button"> Cancel </button>
+            </div>
+        </form>
+        <img id="poster">
+    </div>
   </body>
 </html>
