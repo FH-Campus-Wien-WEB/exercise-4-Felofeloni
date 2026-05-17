@@ -1,33 +1,5 @@
 {
   "joe": {
-    "tt0167260": {
-      "imdbID": "tt0167260",
-      "Title": "The Lord of the Rings: The Return of the King",
-      "Released": "2003-12-16",
-      "Runtime": 201,
-      "Genres": [
-        "Adventure",
-        "Drama",
-        "Fantasy"
-      ],
-      "Directors": [
-        "Peter Jackson"
-      ],
-      "Writers": [
-        "J.R.R. Tolkien",
-        "Fran Walsh",
-        "Philippa Boyens"
-      ],
-      "Actors": [
-        "Elijah Wood",
-        "Viggo Mortensen",
-        "Ian McKellen"
-      ],
-      "Plot": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_SX300.jpg",
-      "Metascore": 94,
-      "imdbRating": 9
-    },
     "tt0057261": {
       "imdbID": "tt0057261",
       "Title": "Lord of the Flies",
@@ -54,6 +26,197 @@
       "Poster": "https://m.media-amazon.com/images/M/MV5BY2RiOTM0ZDgtNDRlMi00MDMzLWI1NDYtY2NjZDM4YTkwNWVlXkEyXkFqcGc@._V1_SX300.jpg",
       "Metascore": 67,
       "imdbRating": 6.9
+    },
+    "tt35524793": {
+      "imdbID": "tt35524793",
+      "Title": "The Moment",
+      "Released": "2026-02-05",
+      "Runtime": 103,
+      "Genres": [
+        "Comedy",
+        "Drama",
+        "Thriller"
+      ],
+      "Directors": [
+        "Aidan Zamiri"
+      ],
+      "Writers": [
+        "Aidan Zamiri",
+        "Bertie Brandes",
+        "Charli XCX"
+      ],
+      "Actors": [
+        "Charli XCX",
+        "Francesca Faridany",
+        "Errol Barnett"
+      ],
+      "Plot": "A rising pop star navigates the complexities of fame and industry pressure while preparing for her arena tour debut.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZjQ4Y2QzOTgtODQ5MS00ZjVkLWEwOGUtNDZhYzJjODIzOTIwXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "Metascore": 53,
+      "imdbRating": 6.1
+    },
+    "tt6256872": {
+      "imdbID": "tt6256872",
+      "Title": "A Moment in the Reeds",
+      "Released": "2018-06-28",
+      "Runtime": 108,
+      "Genres": [
+        "Drama",
+        "Romance"
+      ],
+      "Directors": [
+        "Mikko Mäkelä"
+      ],
+      "Writers": [
+        "Mikko Mäkelä",
+        "Janne Puustinen"
+      ],
+      "Actors": [
+        "Janne Puustinen",
+        "Boodi Kabbani",
+        "Mika Melender"
+      ],
+      "Plot": "A young Finnish man returns for the summer to help renovate his father's lake house. He meets and befriends Tareq, a recent asylum seeker from Syria, and the two spend the summer bonding.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZTRlMDY3NWMtNWJiZS00NDBmLTkyMjEtYmRlOGJjY2QyMWRiXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": null,
+      "imdbRating": 6.9
+    },
+    "tt3566834": {
+      "imdbID": "tt3566834",
+      "Title": "A Minecraft Movie",
+      "Released": "2025-04-03",
+      "Runtime": 101,
+      "Genres": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "Directors": [
+        "Jared Hess"
+      ],
+      "Writers": [
+        "Chris Bowman",
+        "Hubbel Palmer",
+        "Neil Widener"
+      ],
+      "Actors": [
+        "Jason Momoa",
+        "Jack Black",
+        "Sebastian Hansen"
+      ],
+      "Plot": "Four misfits are suddenly pulled through a mysterious portal into a bizarre cubic wonderland that thrives on imagination. To get back home they'll have to master this world while embarking on a quest with an unexpected expert craf...",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYzFjMzNjOTktNDBlNy00YWZhLWExYTctZDcxNDA4OWVhOTJjXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": 45,
+      "imdbRating": 5.6
+    },
+    "tt0120737": {
+      "imdbID": "tt0120737",
+      "Title": "The Lord of the Rings: The Fellowship of the Ring",
+      "Released": "2001-12-18",
+      "Runtime": 178,
+      "Genres": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "Directors": [
+        "Peter Jackson"
+      ],
+      "Writers": [
+        "J.R.R. Tolkien",
+        "Fran Walsh",
+        "Philippa Boyens"
+      ],
+      "Actors": [
+        "Elijah Wood",
+        "Ian McKellen",
+        "Orlando Bloom"
+      ],
+      "Plot": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+      "Metascore": 92,
+      "imdbRating": 8.9
+    },
+    "tt0076759": {
+      "imdbID": "tt0076759",
+      "Title": "Star Wars: Episode IV - A New Hope",
+      "Released": "1977-05-24",
+      "Runtime": 121,
+      "Genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "Directors": [
+        "George Lucas"
+      ],
+      "Writers": [
+        "George Lucas"
+      ],
+      "Actors": [
+        "Mark Hamill",
+        "Harrison Ford",
+        "Carrie Fisher"
+      ],
+      "Plot": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth ...",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": 90,
+      "imdbRating": 8.6
+    },
+    "tt0080684": {
+      "imdbID": "tt0080684",
+      "Title": "Star Wars: Episode V - The Empire Strikes Back",
+      "Released": "1980-06-17",
+      "Runtime": 124,
+      "Genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "Directors": [
+        "Irvin Kershner"
+      ],
+      "Writers": [
+        "Leigh Brackett",
+        "Lawrence Kasdan",
+        "George Lucas"
+      ],
+      "Actors": [
+        "Mark Hamill",
+        "Harrison Ford",
+        "Carrie Fisher"
+      ],
+      "Plot": "After the Empire overpowers the Rebel Alliance, Luke Skywalker begins training with Jedi Master Yoda, while Darth Vader and bounty hunter Boba Fett pursue his friends across the galaxy.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": 82,
+      "imdbRating": 8.7
+    },
+    "tt0086190": {
+      "imdbID": "tt0086190",
+      "Title": "Star Wars: Episode VI - Return of the Jedi",
+      "Released": "1983-05-24",
+      "Runtime": 131,
+      "Genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "Directors": [
+        "Richard Marquand"
+      ],
+      "Writers": [
+        "Lawrence Kasdan",
+        "George Lucas"
+      ],
+      "Actors": [
+        "Mark Hamill",
+        "Harrison Ford",
+        "Carrie Fisher"
+      ],
+      "Plot": "After rescuing Han Solo from Jabba the Hutt, the Rebel Alliance attempts to destroy the second Death Star while Luke struggles to help Darth Vader back from the dark side.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNWEwOTI0MmUtMGNmNy00ODViLTlkZDQtZTg1YmQ3MDgyNTUzXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": 58,
+      "imdbRating": 8.3
     }
   },
   "jane": {

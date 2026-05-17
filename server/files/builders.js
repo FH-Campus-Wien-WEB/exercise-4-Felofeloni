@@ -127,7 +127,7 @@ export class MovieBuilder extends ElementBuilder {
                     })
       editButton.appendTo(articleSide.element)
       const deleteButton = new ElementBuilder("button").text("Delete").listener("click", () => {
-                        deleteMovie(movieArticle.element.id)
+                        deleteMovie(movie.imdbID)
                     })
       deleteButton.appendTo(articleSide.element)
     }

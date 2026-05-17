@@ -63,3 +63,9 @@ nav button{
   width:95%;
   margin: 5px 10px;
 }
+
+.add-button {
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-left: 2px;
+}

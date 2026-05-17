@@ -2,13 +2,13 @@ import { ButtonBuilder, ElementBuilder, MovieBuilder } from "./builders.js";
 
 // Externalized message strings
 const messages = {
-  dataLoadError: 'Daten konnten nicht geladen werden, Status',
-  movieAlreadyInCollection: 'Film bereits in der Sammlung.',
-  addMovieFailed: 'Hinzufügen des Films ist fehlgeschlagen.',
-  deleteMovieFailed: 'Film konnte nicht gelöscht werden.',
-  noResultsFound: 'Keine Ergebnisse gefunden.',
-  searchFailed: 'Die Suche ist fehlgeschlagen...',
-  loggedOutGreeting: 'Bitte logge dich ein, um deine Filmkollektion zu sehen.',
+  dataLoadError: 'Could not load data, status',
+  movieAlreadyInCollection: 'Movie already in the collection.',
+  addMovieFailed: 'Failed to add movie.',
+  deleteMovieFailed: 'Failed to delete movie.',
+  noResultsFound: 'No results found.',
+  searchFailed: 'Search failed...',
+  loggedOutGreeting: 'Please log in to view your movie collection.',
   loginFailed: 'Login failed'
 };
 
@@ -87,9 +87,10 @@ function addMovie(imdbID) {
   fetch(`/movies/${imdbID}`, { method: 'PUT' })
     .then(response => {
       if (response.status === 201) {
-        // Task 2.2: Make sure to remove the added movie from the search results to avoid
-        // giving the user the option to add it again.
-    
+        // Remove from search results if present
+        const resultElement = document.querySelector(`[data-imdb-id="${imdbID}"]`);
+        if (resultElement) resultElement.remove();
+
         loadMovies();
         updateGenres();
       } else if (response.status === 200) {
@@ -137,9 +138,20 @@ function searchMovies(query) {
       const resultsDiv = document.getElementById("searchResults");
       resultsDiv.innerHTML = '';
 
-      // Task 2.2: Render the results returned from the server. Make sure to
-      // include an "Add" button for each result that calls `addMovie(imdbID)` when clicked.
-      // There is a second part to this task, in `addMovie`
+      if (!results || results.length === 0) {
+        new ElementBuilder("p").text(messages.noResultsFound).appendTo(resultsDiv);
+        return;
+      }
+
+      const ul = document.createElement('ul');
+      resultsDiv.appendChild(ul);
+      for (const movie of results) {
+        new ElementBuilder('li')
+          .id(movie.imdbID)
+          .append(new ElementBuilder('span').text(`${movie.Title} ${movie.Year ? '(' + movie.Year + ')' : ''}`))
+          .append(new ButtonBuilder('Add').class("add-button").onclick(() => addMovie(movie.imdbID)))
+          .appendTo(ul);
+      }
 
     })
     .catch(error => {
@@ -173,13 +185,13 @@ window.onload = function () {
       let loggedAt = '';
       try {
         const d = new Date(loginTime);
-        const datePart = new Intl.DateTimeFormat('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
-        const timePart = new Intl.DateTimeFormat('de-DE', { hour: '2-digit', minute: '2-digit', hour12: false }).format(d);
-        loggedAt = `${datePart} um ${timePart}`;
+        const datePart = new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'long', year: 'numeric' }).format(d);
+        const timePart = new Intl.DateTimeFormat('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }).format(d);
+        loggedAt = `${datePart} at ${timePart}`;
       } catch (err) {
         loggedAt = loginTime || '';
       }
-      greetingElement.textContent = `Hi ${firstName} ${lastName}, du hast dich am ${loggedAt} angemeldet.`;
+      greetingElement.textContent = `Hi ${firstName} ${lastName}, you last logged in on ${loggedAt}.`;
     } else {
       greetingElement.textContent = messages.loggedOutGreeting;
     }
